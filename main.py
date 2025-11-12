@@ -3,6 +3,7 @@ from getpass import getpass
 from give_items import Give_Items
 from insert_logic import encrypt_and_store
 from get_pass import Give_Pass
+from rotate_mainkey import rotate_mainkey_cli
 
 import os
 import sys
@@ -14,6 +15,7 @@ def show_menu():
     print("2) Update an existing record")
     print("3) List all items")
     print("4) Get password by ID")
+    print("5) Change MainKey")
     print("0) Exit")
     print("===========================\n")
 
@@ -183,6 +185,8 @@ def main():
             handle_list_items()
         elif choice == "4":
             handle_get_password()
+        elif choice == "5":
+            rotate_mainkey_cli()
         elif choice == "0" or choice.lower() in ("q", "quit", "exit"):
             print("Exiting program. Bye!")
             break
